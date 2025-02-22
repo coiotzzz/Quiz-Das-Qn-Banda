@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz das QN banda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--cabeça-->
+    <header class="cabeca">
+        <h1 class="bV">Perguntas Perguntadas!</h1>
+    </header>
+    
+    <section id="pergunta1" class="conteudo">
+        <h1 class="titulo">Pergunta 1</h1>
+        <p class="ex"><strong>(É nós ou é a gente?)</strong></p>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="1" data-resposta="errada">
+                É nós
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="1" data-resposta="errada">
+                É a gente
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="1" data-resposta="errada">
+                não sei
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="1" data-resposta="correta">
+                sou trabaiador siô
+            </button>
+        </div>
+    </section>
+    
+    <!-- Pergunta 2 -->
+    <section id="pergunta2" class="conteudo">
+        <h1 class="titulo">Pergunta 2</h1>
+        <p class="ex"><strong>(o que fazer durante um assalto?)</strong></p>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="2" data-resposta="errada">
+                Entregar os pertences lentamente
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="2" data-resposta="errada">
+                Reagir
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="2" data-resposta="errada">
+                Entregar os pertences e quando virar atacar
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="2" data-resposta="correta">
+                usar a tecnica de auto-defesa caveira
+            </button>
+        </div>
+    </section>
+    
+    <!-- Pergunta 3 -->
+    <section id="pergunta3" class="conteudo">
+        <h1 class="titulo">Pergunta 3</h1>
+        <p class="ex"><strong>(sua mãe sabe que cê é viado?)</strong></p>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="3" data-resposta="correta">
+                Sim
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="3" data-resposta="errada">
+                Não
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="3" data-resposta="errada">
+                Não sei
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="3" data-resposta="errada">
+                Não contei ainda
+            </button>
+        </div>
+    </section>
+    
+    <!-- Pergunta 4 -->
+    <section id="pergunta4" class="conteudo">
+        <h1 class="titulo">Pergunta 4</h1>
+        <p class="ex"><strong>(baseado é com piteira ou sem?)</strong></p>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="4" data-resposta="errada">
+                Com piteira
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="4" data-resposta="errada">
+                Sem piteira
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="4" data-resposta="correta">
+                No bong
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="4" data-resposta="errada">
+                Baldada
+            </button>
+        </div>
+    </section>
+    
+    <!-- Pergunta 5 -->
+    <section id="pergunta5" class="conteudo2">
+        <h1 class="titulo">Pra fechar</h1>
+        <p class="ex"><strong>(qual é o maior calmante?)</strong></p>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="5" data-resposta="errada">
+                Maconha
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="5" data-resposta="errada">
+                rivotrill
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="5" data-resposta="correta">
+                Pussy
+            </button>
+        </div>
+        <div class="dBotao">
+            <button class="botao" data-pergunta="5" data-resposta="errada">
+                morfina
+            </button>
+        </div>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer>
+        <p><strong>&copy; maconheiro anonimo da 8</strong></p>
+    </footer>
+    
+    <!-- JS -->
+    <script>
+        // Função que altera a cor do botão
+        function respostaEscolhida(event) {
+            var botao = event.target;
+            var respostaTipo = botao.getAttribute('data-resposta'); // Resposta correta ou errada
+    
+            // Modificando a cor conforme a resposta
+            if (respostaTipo === 'correta') {
+                botao.style.backgroundColor = 'rgb(9, 247, 48)'; // Verde
+            } else {
+                botao.style.backgroundColor = 'red'; // Vermelho
+            }
+    
+            // Desabilitar todos os botões dessa pergunta
+            var perguntaId = botao.getAttribute('data-pergunta');
+            var botoes = document.querySelectorAll(`#pergunta${perguntaId} .botao`);
+            botoes.forEach(function(b) {
+                b.disabled = true;
+            });
+        }
+    
+        // Adiciona o evento de clique a todos os botões
+        document.querySelectorAll('.botao').forEach(function(botao) {
+            botao.addEventListener('click', respostaEscolhida);
+        });
+    </script>
+</body>
+</html>
