@@ -1,18 +1,19 @@
+/* Cor de fundo e transição do corpo */
 body {
     background-color: #3498db, #a7acaf; /* Cor inicial */
     transition: background-color 5.0s ease; /* Transição suave de cor */
-    font:normal 25pt arial;
+    font: normal 25pt arial;
     text-align: center;
 }
 
-
+/* Efeito hover para o body */
 body:hover {
     background-color: #18ecf3; /* Nova cor quando o mouse passar sobre o elemento */
 }
 
-/*topo da pagina*/
+/* topo da página */
 .cabeca {
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     user-select: none;
 }
 
@@ -20,69 +21,131 @@ body:hover {
     margin-top: 5%;
 }
 
-
+/* Título das perguntas */
 .titulo {
     margin-top: 0px;
     user-select: none;
 }
 
-.conteudo {
+/* Conteúdo das perguntas */
+.conteudo, .conteudo2 {
     margin-bottom: 5%;
-    padding:25px;
+    padding: 25px;
 }
 
-.conteudo2 {
-    
-    padding:25px;
-}
-
-/*formulário de perguntas*/
+/* Formulário de perguntas */
 section {
-    margin:auto;
+    margin: auto;
     width: 50%;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
-    border:2px solid black;
+    border: 2px solid black;
     box-shadow: rgba(0, 0, 0, 0.562) 3px 5px 3px 5px;
 }
 
-/*Bem vindo*/
+/* Bem-vindo */
 .bV {
-    padding-top:19px;
+    padding-top: 19px;
 }
 
-/*texto de exemplo*/
+/* Texto de exemplo */
 .ex {
     font-style: italic;
     font: normal 20pt arial;
     user-select: none;
 }
 
-/*botão das perguntas*/
+/* Botão das perguntas */
 .bp {
     background-color: rgba(192, 192, 179, 0.438);
     font: normal 20pt arial;
-    width:70%;
+    width: 70%;
     height: 55px;
     border-radius: 12px 12px 0px 0px;
     margin-bottom: 25px;
 }
 
-
-
+/* Botões das perguntas */
 .botao {
     padding: 5px;
     margin-top: 20px;
     background-color: rgba(79, 82, 80, 0.096);
     font: normal 20pt arial;
-    width:70%;
+    width: 70%;
     height: 55px;
     border-radius: 15px;
     transition: all 0.2s ease;
 }
 
 .botao:hover {
-    width:72%;
+    width: 72%;
     height: 65px;
-    box-shadow:rgba(0, 0, 0, 0.362) 3px 5px 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.362) 3px 5px 3px 5px;
+}
+
+/* Responsividade para telas menores */
+
+/* Para telas de até 768px (tablets e telas menores) */
+@media (max-width: 768px) {
+    /* Ajusta o tamanho do título no cabeçalho */
+    .bV {
+        font-size: 2em;
+    }
+
+    /* Ajusta o tamanho das perguntas */
+    .titulo {
+        font-size: 1.8em;
+    }
+
+    /* Ajusta a largura da seção das perguntas */
+    section {
+        width: 80%; /* Aumenta a largura da seção para dispositivos móveis */
+        padding: 15px;
+    }
+
+    /* Ajusta a largura dos botões */
+    .botao {
+        width: 85%; /* Aumenta a largura dos botões para melhor aproveitamento */
+        font-size: 18pt;
+    }
+
+    /* Ajuste do espaçamento */
+    .conteudo, .conteudo2 {
+        padding: 20px;
+    }
+}
+
+/* Para telas de até 480px (smartphones) */
+@media (max-width: 480px) {
+    /* Ajusta ainda mais o tamanho do título */
+    .bV {
+        font-size: 1.5em;
+    }
+
+    .titulo {
+        font-size: 1.5em;
+    }
+
+    /* Ajusta a largura das seções */
+    section {
+        width: 90%; /* Usa quase toda a largura da tela */
+        padding: 10px;
+    }
+
+    /* Ajusta os botões para telas pequenas */
+    .botao {
+        width: 90%; /* Os botões ficam ainda maiores */
+        font-size: 16pt;
+    }
+
+    /* Ajusta o corpo e outros elementos para telas pequenas */
+    .conteudo, .conteudo2 {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    /* Ajusta o espaçamento do footer */
+    footer {
+        padding: 10px;
+    }
 }
